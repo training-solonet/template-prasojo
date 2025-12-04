@@ -9,7 +9,7 @@
         <li><a href="{{ route('permintaan') }}" class="{{ request()->routeIs('permintaan') ? 'active' : ''}}"><i class='bx bxs-inbox icon' ></i> Permintaan Pembelian</a></li>
         <li><a href="{{ route('purchase') }}" class="{{ request()->routeIs('purchase') ? 'active' : ''}}"><i class='bx bx-table icon' ></i> Purchase Order</a></li>
         <li><a href="{{ route('riwayat') }}" class="{{ request()->routeIs('riwayat') ? 'active' : ''}}"><i class='bx bxs-notepad icon' ></i> Riwayat PO</a></li>
-        <li><a href="{{ route('pembayaran') }}" class="{{ request()->routeIs('pembayaran') ? 'active' : ''}}"><i class='bx bxs-notepad icon' ></i> Pembayaran</a></li>
+        <li><a href="{{ route('pembayaran') }}" class="{{ request()->routeIs('pembayaran') ? 'active' : ''}}"><i class='bx bx-dollar-circle icon'></i> Pembayaran</a></li>
     </ul>
     <div class="ads">
         <a href="#" class="btn-log-out">Log Out</a>

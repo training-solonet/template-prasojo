@@ -15,4 +15,4 @@ Route::get('/barang', [BarangController::class, 'index'])->name('barang');
 Route::get('/permintaan', [PermintaanController::class, 'index'])->name('permintaan');
 Route::get('/purchase-order', [PurchaseController::class, 'index'])->name('purchase');
 Route::get('/riwayat', [RiwayatController::class, 'index'])->name('riwayat');
-Route::get('/pembayaran', [PembayaranController::class, 'index']);
+Route::get('/pembayaran', [PembayaranController::class, 'index'])->name('pembayaran');
