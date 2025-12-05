@@ -5,7 +5,8 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+</p><img width="603" height="574" alt="file_2025-01-21_11 37 08" src="https://github.com/user-attachments/assets/765d4f1f-1b53-4659-9067-6c19ebfc0968" />
+
 
 ## About Laravel
 
