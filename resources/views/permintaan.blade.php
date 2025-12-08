@@ -14,7 +14,7 @@
                 </div>
             </div>
         </div>
-        <div style="background:var(--card); padding:8px; border-radius:10px; border:1px solid var(--glass);">
+        <div style="background:var(--card); margin-top: 20px; padding:8px; border-radius:10px; border:1px solid var(--glass);">
             <table>
                 <thead>
                     <tr>

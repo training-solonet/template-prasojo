@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 * {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'Inter', sans-serif;
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
@@ -124,6 +124,7 @@ li {
 }
 #sidebar .side-menu > li > a:hover {
 	background: var(--active-green);
+	transform: translateX(8px);
 }
 #sidebar .side-menu > li > a.active .icon-right {
 	transform: rotateZ(90deg);
@@ -262,15 +263,15 @@ nav .form-group {
 }
 nav .form-group input {
 	width: 100%;
-	background: var(--grey);
+	background: white;
 	border-radius: 5px;
-	border: none;
+	border: 1px solid var(--grey);
 	outline: none;
 	padding: 10px 36px 10px 16px;
 	transition: all .3s ease;
 }
 nav .form-group input:focus {
-	box-shadow: 0 0 0 1px var(--primary-green), 0 0 0 4px var(--light-blue);
+	box-shadow: 0 0 0 1px var(--primary-green), 0 0 0 4px var(--light-green);
 }
 nav .form-group .icon {
 	position: absolute;
@@ -598,18 +599,24 @@ main .form-group {
 	display: flex;
 	grid-gap: 10px;
 }
-main .form-group input {
+main .form-group input,
+.container-top div input,
+.container-top div select,
+td .form-group {
 	flex-grow: 1;
 	padding: 10px 16px;
 	border-radius: 5px;
 	outline: none;
-	background: var(--grey);
-	border: none;
+	background: white;
+	border: 1px solid var(--grey);
 	transition: all .3s ease;
 	width: 100%;
 }
-main .form-group input:focus {
-	box-shadow: 0 0 0 1px var(--primary-green), 0 0 0 4px var(--light-blue);
+main .form-group input:focus,
+.container-top div input:focus,
+.container-top div select:focus,
+td .form-group:focus {
+	box-shadow: 0 0 0 1px var(--primary-green), 0 0 0 4px var(--light-green);
 }
 main .btn-send {
 	padding: 0 16px;
@@ -659,6 +666,74 @@ main .btn-send:hover {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+}
+/* ====== TABLE WRAPPER ====== */
+[style*="background:var(--card)"] {
+    background: #ffffff !important;
+    border: 1px solid #e5e7eb !important;
+    padding: 8px !important;
+    border-radius: 12px !important;
+}
+
+/* ====== TABLE ====== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+thead {
+    background: #f9fafb;
+}
+
+thead th {
+    text-align: left;
+    padding: 12px;
+    color: #6b7280;
+    font-weight: 600;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/* ====== ROWS ====== */
+tbody tr {
+    border-bottom: 1px solid #e5e7eb;
+}
+
+tbody tr:last-child {
+    border-bottom: none;
+}
+
+tbody td {
+    padding: 12px;
+}
+
+/* ====== BUTTONS INSIDE TABLE ====== */
+.btn-ghost {
+    background: transparent;
+    color: #4b5563;
+    border-radius: 8px;
+    padding: 6px 12px;
+	border: 1px solid #e5e7eb;
+}
+
+.btn-danger {
+    background: #ef4444;
+    color: white;
+    border-radius: 8px;
+    padding: 6px 12px;
+}
+.container-top {
+	display: flex;
+	width: 100%;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.container-top div {
+	width: 49%;
+}
+.bukti-bayar {
+	width: 50px;
+	height: 50px;
 }
 /* MAIN */
 /* CONTENT */
