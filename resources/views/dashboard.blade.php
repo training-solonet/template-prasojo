@@ -1,5 +1,8 @@
 <x-template>
-    <h1 class="title">Dashboard</h1>
+    <div class="container-title">
+        <h1 class="title">Dashboard</h1>
+        <p class="muted">Update: Selasa, 9 Desember 2025 pukul 10.08</p>
+    </div>
         <ul class="breadcrumbs">
             <li><a href="/">Home</a></li>
             <li class="divider">/</li>
