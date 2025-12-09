@@ -35,8 +35,8 @@
                         <td>30</td>
                         <td>Jl. Batik No. 12</td>
                         <td>
-                            <button class="btn btn-ghost edit-supplier">Edit</button>
-                            <button class="btn btn-danger delete-supplier">Delete</button>
+                            <button class="btn btn-ghost edit-supplier" onclick="openModalEdit()">Edit</button>
+                            <button class="btn btn-danger delete-supplier" onclick="deleteRow(this)">Delete</button>
                         </td>
                     </tr>
                     <tr>
@@ -45,8 +45,8 @@
                         <td>14</td>
                         <td>Desa Tenun</td>
                         <td>
-                            <button class="btn btn-ghost edit-supplier">Edit</button>
-                            <button class="btn btn-danger delete-supplier">Delete</button>
+                            <button class="btn btn-ghost edit-supplier" onclick="openModalEdit()">Edit</button>
+                            <button class="btn btn-danger delete-supplier" onclick="deleteRow(this)">Delete</button>
                         </td>
                     </tr>
                 </tbody>
@@ -54,3 +54,84 @@
         </div>
     </div>
 </x-template>
+<!-- Modal Tambah Supplier -->
+<div id="modalTambahSupplier" class="modal-overlay" style="display:none;">
+    <div class="modal-box">
+        <div class="modal-header">
+            <h3>Tambah Supplier</h3>
+            <button class="btn btn-close btn-ghost" onclick="closeModal()">Tutup</button>
+        </div>
+
+        <div class="modal-body">
+            <label style="font-size: 12px; color: #17233A;">Nama Supplier</label>
+            <input type="text" class="input form-group" id="nama">
+
+            <label style="font-size: 12px; color: #17233A;">Kontak</label>
+            <input type="text" class="input form-group" id="kontak">
+
+            <label style="font-size: 12px; color: #17233A;">Alamat</label>
+            <input type="text" class="input form-group" id="alamat">
+        </div>
+
+        <div class="modal-footer">
+            <button class="btn btn-ghost" onclick="closeModal()">Batal</button>
+            <button class="btn btn-primary" onclick="storeData()">Simpan</button>
+        </div>
+    </div>
+</div>
+
+{{-- Modal Edit --}}
+<div id="modalEditSupplier" class="modal-overlay" style="display:none;">
+    <div class="modal-box">
+        <div class="modal-header">
+            <h3>Edit Supplier</h3>
+        </div>
+        <div class="modal-body">
+            <p>(dummy)</p>
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-ghost" onclick="closeModalEdit()">Tutup</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    const modal = document.getElementById('modalTambahSupplier');
+    const editModal = document.getElementById('modalEditSupplier');
+
+    document.querySelector('.btn.btn-primary').addEventListener('click', () => {
+        modal.style.display = 'flex';
+    });
+
+    function closeModal() {
+        modal.style.display = 'none';
+    }
+
+    function storeData() {
+        let nama = document.getElementById('nama');
+        let kontak = document.getElementById('kontak');
+        let alamat = document.getElementById('alamat');
+
+        alert('Supplier disimpan (dummy).');
+        modal.style.display = 'none';
+
+        nama.value = "";
+        kontak.value = "";
+        alamat.value = "";
+    }
+
+    function openModalEdit(){
+        editModal.style.display = 'flex';
+    }
+
+    function closeModalEdit(){
+        editModal.style.display = 'none';
+    }
+
+    function deleteRow(button){
+        if(confirm("Hapus supplier?")){
+            let row = button.parentElement.parentElement;
+            row.remove();
+        }
+    }
+</script>

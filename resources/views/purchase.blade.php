@@ -14,8 +14,8 @@
                 </div>
             </div>
             <div>
-                <button class="btn btn-primary">Tambah Baris</button>
-                <button class="btn btn-primary">Simpan & Kirim</button>
+                <button class="btn btn-primary" onclick="tambahBaris()">Tambah Baris</button>
+                <button class="btn btn-primary" onclick="simpanDanKirim()">Simpan & Kirim</button>
             </div>
         </div>
         
@@ -59,10 +59,10 @@
                             <input type="number" name="harga" id="harga" value="50000" class="form-group">
                         </td>
                         <td>
-                            <p>500000</p>
+                            <p class="subtotal">500.000</p>
                         </td>
                         <td>
-                            <button class="btn btn-ghost">Hapus</button>
+                            <button class="btn btn-ghost hapus-row">Hapus</button>
                         </td>
                     </tr>
                 </tbody>
@@ -86,3 +86,56 @@
         </div>
     </div>
 </x-template>
+<script>
+    function simpanDanKirim(){
+        alert("PO disimpan & dikirim ke supplier (dummy).");
+    }
+
+    document.addEventListener("input", function(e) {
+        if (e.target.matches("input[name='qty'], input[name='harga']")) {
+            hitungSubtotal(e.target.closest("tr"));
+        }
+    });
+
+    function hitungSubtotal(row) {
+        let qty = row.querySelector("input[name='qty']").value;
+        let harga = row.querySelector("input[name='harga']").value;
+        let subtotal = row.querySelector(".subtotal");
+
+        let hasil = (qty * harga) || 0;
+        subtotal.textContent = hasil.toLocaleString("id-ID");
+    }
+
+    function tambahBaris() {
+        let tbody = document.querySelector("tbody");
+
+        let tr = document.createElement("tr");
+        tr.innerHTML = `
+            <td>
+                <select name="barang" class="form-group">
+                    <option value="1">Kain Lurik</option>
+                    <option value="2">Tinta Pewarna</option>
+                </select>
+            </td>
+            <td>
+                <input type="number" name="qty" class="form-group" value="0">
+            </td>
+            <td>
+                <input type="number" name="harga" class="form-group" value="0">
+            </td>
+            <td>
+                <p class="subtotal">0</p>
+            </td>
+            <td>
+                <button class="btn btn-ghost hapus-row">Hapus</button>
+            </td>
+        `;
+
+        tbody.appendChild(tr);
+    }
+    document.addEventListener("click", function(e){
+        if (e.target.classList.contains("hapus-row")) {
+            e.target.closest("tr").remove();
+        }
+    });
+</script>

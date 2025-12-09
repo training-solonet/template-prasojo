@@ -25,7 +25,7 @@
         <li><a href="{{ route('pembayaran') }}" class="{{ request()->routeIs('pembayaran') ? 'active' : ''}}"><i class='bx bx-dollar-circle icon'></i> Pembayaran</a></li>
     </ul>
     <div class="ads">
-        <a href="#" class="btn-log-out">Log Out</a>
+        <a href="{{ route('login.logout') }}" class="btn-log-out">Log Out</a>
     </div>
 </section>
 <!-- SIDEBAR -->

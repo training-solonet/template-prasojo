@@ -55,3 +55,22 @@
         </div>
     </div>
 </x-template>
+<script>
+document.addEventListener("click", function(e) {
+
+    // Jika tombol yang diklik adalah tombol Approve
+    if (e.target.classList.contains("btn-primary") && e.target.textContent === "Approve") {
+        alert("PO PO-2025-003 telah di-approve dan sedang diproses.");
+        let row = e.target.closest("tr"); // ambil baris tempat tombol berada
+
+        // Ubah status menjadi "Dikirim"
+        row.querySelector("td:nth-child(5)").textContent = "Dikirim";
+
+        // Ubah tombol menjadi "Selesai"
+        e.target.classList.remove("btn-primary");
+        e.target.classList.add("btn-ghost");
+        e.target.textContent = "Selesai";
+    }
+
+});
+</script>

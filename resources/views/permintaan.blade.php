@@ -36,7 +36,7 @@
                         <td>50 kg</td>
                         <td>Selesai</td>
                         <td>
-                            <button class="btn btn-ghost edit-supplier">Lihat</button>
+                            <button class="btn btn-ghost edit-supplier" onclick="openAlert()">Lihat</button>
                         </td>
                     </tr>
                     <tr>
@@ -47,7 +47,7 @@
                         <td>30 liter</td>
                         <td>Ditolak</td>
                         <td>
-                            <button class="btn btn-ghost edit-supplier">Lihat</button>
+                            <button class="btn btn-ghost edit-supplier" onclick="openAlert()">Lihat</button>
                         </td>
                     </tr>
                     <tr>
@@ -58,7 +58,7 @@
                         <td>10 meter</td>
                         <td>Menunggu PO</td>
                         <td>
-                            <button class="btn btn-ghost edit-supplier">Buat PO</button>
+                            <button class="btn btn-ghost edit-supplier" onclick="openAlert()">Buat PO</button>
                         </td>
                     </tr>
                 </tbody>
@@ -66,3 +66,9 @@
         </div>
     </div>
 </x-template>
+<script>
+    function openAlert(){
+        alert("Konversi PR -> PO (dummy).");
+        window.location.href = "/pembelian/purchase-order";
+    }
+</script>

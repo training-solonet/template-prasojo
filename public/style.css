@@ -791,11 +791,129 @@ tbody td {
 .bukti-bayar {
 	width: 50px;
 	height: 50px;
+	border-radius: 20%;
+}
+.bukti-bayar:hover{
+	cursor: pointer;
 }
 .container-title {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+}
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+	backdrop-filter: blur(2px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal-box {
+    background: white;
+    padding: 20px;
+    width: 600px;
+    border-radius: 10px;
+    animation: fadeIn 0.2s ease;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+.input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.btn-close {
+    background: #eee;
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.modal-body .container div .input{
+	width: 100%;
+}
+
+.modal-body .container div{
+	width: 49%;
+}
+
+.modal-body .container{
+	display: flex;
+	justify-content: space-between;
+}
+.modal-overlay-photo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.55);
+    backdrop-filter: blur(5px);
+    display: flex;
+	flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal-box-photo {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+    background: transparent;
+    width: 380px;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+}
+
+.modal-box-photo img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.modal-btn-photo {
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 6px;
+	font-size: 50px;
+}
+.close-photo{
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 10;
+	margin: 20px;
+}
+.details p{
+	margin-bottom: 15px;
 }
 /* MAIN */
 /* CONTENT */
