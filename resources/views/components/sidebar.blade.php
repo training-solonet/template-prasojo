@@ -1,6 +1,19 @@
 <!-- SIDEBAR -->
 <section id="sidebar">
-    <a href="/" class="brand"><i class='bx bxs-smile icon'></i> PRASOJO</a>
+    <a href="/" class="brand">
+        <div class="title-header">
+            <div class="title-logo">
+                <p>LP</p>
+            </div>
+            <div class="title-title">
+                <strong class="main">Lurik Prasojo</strong>
+                <p>Aplikasi Prasojo</p>
+            </div>
+        </div>
+        <div class="subtitle">
+            <p>Modul: Pengadaan & Penerimaan</p>
+        </div>
+    </a>
     <ul class="side-menu">
         <li class="divider" data-text="pembelian">Pembelian</li>
         <li><a href="{{ route('dashboard') }}" class="{{ request()->routeIs('dashboard') ? 'active' : ''}}"><i class='bx bxs-dashboard icon' ></i> Dashboard</a></li>

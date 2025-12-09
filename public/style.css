@@ -77,17 +77,74 @@ li {
 #sidebar .brand {
 	font-size: 24px;
 	display: flex;
+	flex-direction: column;
 	align-items: center;
 	height: 64px;
 	font-weight: 700;
-	color: var(--primary-green);
+	color: var(--light);
 	position: sticky;
 	top: 0;
 	left: 0;
 	z-index: 100;
-	background: var(--light);
+	background: var(--primary-green);
 	transition: all .3s ease;
-	padding: 0 6px;
+	margin: 20px;
+}
+#sidebar .brand .title-header {
+	display: flex;
+	align-items: center;
+	width: 100%;
+}
+#sidebar .brand .title-header .title-logo {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 35%;
+	width: 36px;
+	height: 36px;
+	background-color: var(--active-green);
+	margin-right: 10px;
+}
+#sidebar .brand .title-header .title-logo p {
+	font-size: 20px;
+}
+#sidebar .brand .title-header .title-title strong{
+	font-size: 16px;
+	opacity: 1;
+}
+#sidebar .brand .subtitle p,
+#sidebar .brand .title-title p {
+	font-size: 12px;
+	opacity: 0.95;
+}
+#sidebar .brand .subtitle {
+	width: 100%;
+	margin-top: 10px;
+	display: flex;
+	justify-content: start;
+}
+#sidebar.hide .brand {
+	margin: 20px 5px;
+	width: 100%;
+}
+#sidebar.hide .brand .title-header {
+	display: flex;
+	justify-content: center;
+	margin: 0;
+}
+#sidebar.hide:hover .brand .title-header {
+	justify-content: start;
+}
+#sidebar.hide:hover .brand {
+	margin: 20px;
+}
+#sidebar.hide .brand .subtitle,
+#sidebar.hide .brand .title-title {
+	display: none;
+}
+#sidebar.hide:hover .brand .subtitle,
+#sidebar.hide:hover .brand .title-title {
+	display: block;
 }
 #sidebar .icon {
 	min-width: 48px;
