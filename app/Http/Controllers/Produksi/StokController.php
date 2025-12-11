@@ -1,17 +1,18 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Produksi;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class PermintaanController extends Controller
+class StokController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('permintaan');
+        return view('produksi.stok');
     }
 
     /**

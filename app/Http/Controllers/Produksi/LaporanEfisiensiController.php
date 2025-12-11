@@ -1,17 +1,18 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Produksi;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class SupplierController extends Controller
+class LaporanEfisiensiController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('supplier');
+        return view('produksi.laporanefisiensi');
     }
 
     /**

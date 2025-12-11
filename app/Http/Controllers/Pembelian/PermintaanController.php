@@ -1,17 +1,18 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Pembelian;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class RiwayatController extends Controller
+class PermintaanController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('riwayat');
+        return view('pembelian.permintaan');
     }
 
     /**

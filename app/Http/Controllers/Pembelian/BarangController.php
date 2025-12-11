@@ -1,17 +1,18 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Pembelian;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class PurchaseController extends Controller
+class BarangController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('purchase');
+        return view('pembelian.barang');
     }
 
     /**
