@@ -659,7 +659,9 @@ main .form-group {
 main .form-group input,
 .container-top div input,
 .container-top div select,
-td .form-group {
+td .form-group,
+div .form-group,
+#modalBuaSPP .modal-box .modal-body div .form-group {
 	flex-grow: 1;
 	padding: 10px 16px;
 	border-radius: 5px;
@@ -672,7 +674,9 @@ td .form-group {
 main .form-group input:focus,
 .container-top div input:focus,
 .container-top div select:focus,
-td .form-group:focus {
+td .form-group:focus,
+div .form-group:focus,
+#modalBuaSPP .modal-box .modal-body div .form-group {
 	box-shadow: 0 0 0 1px var(--primary-green), 0 0 0 4px var(--light-green);
 }
 main .btn-send {
@@ -915,6 +919,31 @@ tbody td {
 .details p{
 	margin-bottom: 15px;
 }
+
+.info-warning{
+	background:#fff3cd;
+	color:#856404;
+	padding:2px 6px;
+	border-radius:5px;
+}
+
+.info-success{
+	background:#d4edda;
+	color:#155724;
+	padding:2px 6px;
+	border-radius:5px;
+}
+
+.btn-spp {
+	background:#007bff;
+	color:white;
+	border:none;
+	padding:5px 10px;
+	border-radius:5px;
+	cursor:pointer;
+}
+
+
 /* MAIN */
 /* CONTENT */
 
