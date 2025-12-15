@@ -844,6 +844,12 @@ tbody td {
     border-radius: 6px;
 }
 
+.btn-warning {
+	background: #ffc107;
+	border-radius: 8px;
+    padding: 6px 12px;
+}
+
 .modal-footer {
     display: flex;
     justify-content: flex-end;
