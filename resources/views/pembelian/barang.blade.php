@@ -8,7 +8,7 @@
     <div class="panel">
         <div class="space-between">
             <div>
-                <strong>Master Barang (Bahan & Barang Jadi)</strong>
+                <strong>Master Barang<br>(Bahan & Barang Jadi)</strong>
                 <div class="muted">
                     Tambahkan barang baku & produk
                 </div>
@@ -17,8 +17,8 @@
                 <button class="btn btn-primary">Tambah Barang</button>
             </div>
         </div>
-        <div style="background:var(--card); margin-top: 20px; padding:8px; border-radius:10px; border:1px solid var(--glass);">
-            <table>
+        <div class="table-responsive">
+            <table class="responsive-table">
                 <thead>
                     <tr>
                         <th>Kode</th>
@@ -44,7 +44,7 @@
                     <tr>
                         <td>BATIK-01</td>
                         <td>Batik Lurik Slim</td>
-                        <td>Baarng Jadi</td>
+                        <td>Barang Jadi</td>
                         <td>pcs</td>
                         <td>8</td>
                         <td>

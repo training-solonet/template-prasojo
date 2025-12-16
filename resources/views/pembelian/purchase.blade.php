@@ -13,7 +13,7 @@
                     Input, approve, dan kirim PO ke supplier
                 </div>
             </div>
-            <div>
+            <div class="button-group">
                 <button class="btn btn-primary" onclick="tambahBaris()">Tambah Baris</button>
                 <button class="btn btn-primary" onclick="simpanDanKirim()">Simpan & Kirim</button>
             </div>
@@ -34,39 +34,41 @@
                 </div>
             </div>
             <h5>Detail Item</h5>
-            <table style="margin-top: 10px">
-                <thead>
-                    <tr>
-                        <th>Barang</th>
-                        <th>Qty</th>
-                        <th>Harga</th>
-                        <th>Subtotal</th>
-                        <th></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>
-                            <select name="barang" id="barang" class="form-group">
-                                <option value="1" selected>Kain Lurik</option>
-                                <option value="2">Tinta Pewarna</option>
-                            </select>
-                        </td>
-                        <td>
-                            <input type="number" name="qty" id="qty" value="10" class="form-group">
-                        </td>
-                        <td>
-                            <input type="number" name="harga" id="harga" value="50000" class="form-group">
-                        </td>
-                        <td>
-                            <p class="subtotal">500.000</p>
-                        </td>
-                        <td>
-                            <button class="btn btn-ghost hapus-row">Hapus</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-responsive">
+                <table style="margin-top: 10px" class="responsive-table">
+                    <thead>
+                        <tr>
+                            <th>Barang</th>
+                            <th>Qty</th>
+                            <th>Harga</th>
+                            <th>Subtotal</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <select name="barang" id="barang" class="form-group">
+                                    <option value="1" selected>Kain Lurik</option>
+                                    <option value="2">Tinta Pewarna</option>
+                                </select>
+                            </td>
+                            <td>
+                                <input type="number" name="qty" id="qty" value="10" class="form-group">
+                            </td>
+                            <td>
+                                <input type="number" name="harga" id="harga" value="50000" class="form-group">
+                            </td>
+                            <td>
+                                <p class="subtotal">500.000</p>
+                            </td>
+                            <td>
+                                <button class="btn btn-ghost hapus-row">Hapus</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
             <div class="muted" style="margin: 10px 0;">
                 Gunakan tombol "Tambah Baris" untuk menambahkan item
             </div>

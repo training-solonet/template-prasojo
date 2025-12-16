@@ -13,8 +13,8 @@
                 <h2><strong>Daftar Surat Perintah Produksi (SPP)</strong></h2>
             </div>
         </div>
-        <div style="background:var(--card); margin-top: 20px; padding:8px; border-radius:10px; border:1px solid var(--glass);">
-            <table>
+        <div class="table-responsive">
+            <table class="responsive-table">
                 <thead>
                     <tr>
                         <th>No</th>

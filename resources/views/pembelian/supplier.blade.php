@@ -17,8 +17,8 @@
                 <button class="btn btn-primary">Tambah Supplier</button>
             </div>
         </div>
-        <div style="background:var(--card); margin-top:20px; padding:8px; border-radius:10px; border:1px solid var(--glass);">
-            <table>
+        <div class="table-responsive">
+            <table class="responsive-table">
                 <thead>
                     <tr>
                         <th>Nama</th>
@@ -30,28 +30,29 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Sumber Batik</td>
-                        <td>08123456789</td>
-                        <td>30</td>
-                        <td>Jl. Batik No. 12</td>
-                        <td>
-                            <button class="btn btn-ghost edit-supplier" onclick="openModalEdit()">Edit</button>
-                            <button class="btn btn-danger delete-supplier" onclick="deleteRow(this)">Delete</button>
+                        <td data-label="Nama">Sumber Batik</td>
+                        <td data-label="Kontak">08123456789</td>
+                        <td data-label="Top (hari)">30</td>
+                        <td data-label="Alamat">Jl. Batik No. 12</td>
+                        <td data-label="Aksi">
+                            <button class="btn btn-ghost" onclick="openModalEdit()">Edit</button>
+                            <button class="btn btn-danger" onclick="deleteRow(this)">Delete</button>
                         </td>
                     </tr>
                     <tr>
-                        <td>CV. Kain Lurik</td>
-                        <td>01823854923</td>
-                        <td>14</td>
-                        <td>Desa Tenun</td>
-                        <td>
-                            <button class="btn btn-ghost edit-supplier" onclick="openModalEdit()">Edit</button>
-                            <button class="btn btn-danger delete-supplier" onclick="deleteRow(this)">Delete</button>
+                        <td data-label="Nama">CV. Kain Lurik</td>
+                        <td data-label="Kontak">01823854923</td>
+                        <td data-label="Top (hari)">14</td>
+                        <td data-label="Alamat">Desa Tenun</td>
+                        <td data-label="Aksi">
+                            <button class="btn btn-ghost" onclick="openModalEdit()">Edit</button>
+                            <button class="btn btn-danger" onclick="deleteRow(this)">Delete</button>
                         </td>
                     </tr>
                 </tbody>
             </table>
-        </div>
+            </div>
+
     </div>
 </x-template>
 <!-- Modal Tambah Supplier -->
