@@ -1,10 +1,12 @@
 <x-template>
     <h1 class="title">Master Supplier</h1>
+
     <ul class="breadcrumbs">
         <li><a href="#">Home</a></li>
         <li class="divider">/</li>
         <li><a href="{{ route('supplier') }}" class="active">Supplier</a></li>
     </ul>
+
     <div class="panel">
         <div class="space-between">
             <div>
@@ -14,9 +16,10 @@
                 </div>
             </div>
             <div>
-                <button class="btn btn-primary">Tambah Supplier</button>
+                <button class="btn btn-primary" id="btnTambah">Tambah Supplier</button>
             </div>
         </div>
+
         <div class="table-responsive">
             <table class="responsive-table">
                 <thead>
@@ -51,11 +54,11 @@
                     </tr>
                 </tbody>
             </table>
-            </div>
-
+        </div>
     </div>
 </x-template>
-<!-- Modal Tambah Supplier -->
+
+<!-- ================= MODAL TAMBAH (FORM) ================= -->
 <div id="modalTambahSupplier" class="modal-overlay" style="display:none;">
     <div class="modal-box">
         <div class="modal-header">
@@ -63,25 +66,27 @@
             <button class="btn btn-close btn-ghost" onclick="closeModal()">Tutup</button>
         </div>
 
-        <div class="modal-body">
-            <label style="font-size: 12px; color: #17233A;">Nama Supplier</label>
-            <input type="text" class="input form-group" id="nama">
+        <form onsubmit="storeData(event)">
+            <div class="modal-body">
+                <label style="font-size:12px;color:#17233A;">Nama Supplier</label>
+                <input type="text" class="input form-group" id="nama" required>
 
-            <label style="font-size: 12px; color: #17233A;">Kontak</label>
-            <input type="text" class="input form-group" id="kontak">
+                <label style="font-size:12px;color:#17233A;">Kontak</label>
+                <input type="text" class="input form-group" id="kontak" required>
 
-            <label style="font-size: 12px; color: #17233A;">Alamat</label>
-            <input type="text" class="input form-group" id="alamat">
-        </div>
+                <label style="font-size:12px;color:#17233A;">Alamat</label>
+                <input type="text" class="input form-group" id="alamat" required>
+            </div>
 
-        <div class="modal-footer">
-            <button class="btn btn-ghost" onclick="closeModal()">Batal</button>
-            <button class="btn btn-primary" onclick="storeData()">Simpan</button>
-        </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-ghost" onclick="closeModal()">Batal</button>
+                <button type="submit" class="btn btn-primary">Simpan</button>
+            </div>
+        </form>
     </div>
 </div>
 
-{{-- Modal Edit --}}
+<!-- ================= MODAL EDIT (DUMMY, TIDAK DIUBAH) ================= -->
 <div id="modalEditSupplier" class="modal-overlay" style="display:none;">
     <div class="modal-box">
         <div class="modal-header">
@@ -99,21 +104,25 @@
 <script>
     const modal = document.getElementById('modalTambahSupplier');
     const editModal = document.getElementById('modalEditSupplier');
+    const btnTambah = document.getElementById('btnTambah');
 
-    document.querySelector('.btn.btn-primary').addEventListener('click', () => {
+    btnTambah.addEventListener('click', () => {
         modal.style.display = 'flex';
     });
 
-    function closeModal() {
+    function closeModal(){
         modal.style.display = 'none';
     }
 
-    function storeData() {
-        let nama = document.getElementById('nama');
-        let kontak = document.getElementById('kontak');
-        let alamat = document.getElementById('alamat');
+    function storeData(e){
+        e.preventDefault(); // 🔴 penting agar tidak reload
+
+        const nama = document.getElementById('nama');
+        const kontak = document.getElementById('kontak');
+        const alamat = document.getElementById('alamat');
 
         alert('Supplier disimpan (dummy).');
+
         modal.style.display = 'none';
 
         nama.value = "";
@@ -131,8 +140,7 @@
 
     function deleteRow(button){
         if(confirm("Hapus supplier?")){
-            let row = button.parentElement.parentElement;
-            row.remove();
+            button.closest('tr').remove();
         }
     }
 </script>

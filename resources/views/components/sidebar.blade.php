@@ -34,7 +34,7 @@
             <li><a href="{{ route('stok') }}" class="{{ request()->routeIs('stok') ? 'active' : ''}}"><i class='bx bxs-inbox icon' ></i> Stok Bahan Baku</a></li>
             <li><a href="{{ route('permintaan.bahan') }}" class="{{ request()->routeIs('permintaan.bahan') ? 'active' : ''}}"><i class='bx bx-table icon' ></i> Permintaan Bahan Baku</a></li>
             <li><a href="{{ route('laporan.produksi') }}" class="{{ request()->routeIs('laporan.produksi') ? 'active' : ''}}"><i class='bx bxs-notepad icon' ></i> Laporan Produksi</a></li>
-            <li><a href="{{ route('laporan.efisiensi') }}" class=z"{{ request()->routeIs('laporan.efisiensi') ? 'active' : ''}}"><i class='bx bx-dollar-circle icon'></i> Laporan Efisiensi</a></li>
+            <li><a href="{{ route('laporan.efisiensi') }}" class="{{ request()->routeIs('laporan.efisiensi') ? 'active' : ''}}"><i class='bx bx-dollar-circle icon'></i> Laporan Efisiensi</a></li>
         </ul>
     @elseif (request()->session()->get('username') == "marketing")
         <ul class="side-menu">

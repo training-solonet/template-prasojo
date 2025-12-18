@@ -1,10 +1,12 @@
 <x-template>
     <h1 class="title">Master Barang</h1>
+
     <ul class="breadcrumbs">
         <li><a href="/">Home</a></li>
         <li class="divider">/</li>
         <li><a href="{{ route('barang') }}" class="active">Barang</a></li>
     </ul>
+
     <div class="panel">
         <div class="space-between">
             <div>
@@ -14,9 +16,10 @@
                 </div>
             </div>
             <div>
-                <button class="btn btn-primary">Tambah Barang</button>
+                <button class="btn btn-primary" id="btnTambahBarang">Tambah Barang</button>
             </div>
         </div>
+
         <div class="table-responsive">
             <table class="responsive-table">
                 <thead>
@@ -37,8 +40,8 @@
                         <td>meter</td>
                         <td>25</td>
                         <td>
-                            <button class="btn btn-ghost edit-supplier" onclick="openModalEdit()">Edit</button>
-                            <button class="btn btn-danger delete-supplier" onclick="deleteRow(this)">Delete</button>
+                            <button class="btn btn-ghost" onclick="openModalEdit()">Edit</button>
+                            <button class="btn btn-danger" onclick="deleteRow(this)">Delete</button>
                         </td>
                     </tr>
                     <tr>
@@ -48,8 +51,8 @@
                         <td>pcs</td>
                         <td>8</td>
                         <td>
-                            <button class="btn btn-ghost edit-supplier" onclick="openModalEdit()">Edit</button>
-                            <button class="btn btn-danger delete-supplier" onclick="deleteRow(this)">Delete</button>
+                            <button class="btn btn-ghost" onclick="openModalEdit()">Edit</button>
+                            <button class="btn btn-danger" onclick="deleteRow(this)">Delete</button>
                         </td>
                     </tr>
                 </tbody>
@@ -57,7 +60,8 @@
         </div>
     </div>
 </x-template>
-<!-- Modal Tambah Barang -->
+
+<!-- ================= MODAL TAMBAH BARANG (FORM) ================= -->
 <div id="modalTambahBarang" class="modal-overlay" style="display:none;">
     <div class="modal-box">
         <div class="modal-header">
@@ -65,40 +69,43 @@
             <button class="btn btn-close btn-ghost" onclick="closeModal()">Tutup</button>
         </div>
 
-        <div class="modal-body">
-            <label style="font-size: 12px; color: #17233A;">Kode Barang</label>
-            <input type="text" class="input form-group" id="kode" placeholder="KODE-001">
+        <form onsubmit="storeData(event)">
+            <div class="modal-body">
+                <label style="font-size:12px;color:#17233A;">Kode Barang</label>
+                <input type="text" class="input form-group" id="kode" placeholder="KODE-001" required>
 
-            <label style="font-size: 12px; color: #17233A;">Nama Barang</label>
-            <input type="text" class="input form-group" id="nama_barang" placeholder="Kain Lurik 1m">
+                <label style="font-size:12px;color:#17233A;">Nama Barang</label>
+                <input type="text" class="input form-group" id="nama_barang" placeholder="Kain Lurik 1m" required>
 
-            <div class="container">
-                <div>
-                    <label for="jenis" style="font-size: 12px; color: #17233A;">Jenis</label>
-                    <select name="jenis" id="jenis" class="input form-group">
-                        <option value="1">Bahan Baku</option>
-                        <option value="2">Bahan Jadi</option>
-                    </select>
-                </div>
-                <div>
-                    <label style="font-size: 12px; color: #17233A;">Satuan</label>
-                    <input type="text" class="input form-group" id="satuan" placeholder="meter / pcs">
+                <div class="container">
+                    <div>
+                        <label style="font-size:12px;color:#17233A;">Jenis</label>
+                        <select id="jenis" class="input form-group" required>
+                            <option value="">-- Pilih --</option>
+                            <option value="Bahan Baku">Bahan Baku</option>
+                            <option value="Barang Jadi">Barang Jadi</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label style="font-size:12px;color:#17233A;">Satuan</label>
+                        <input type="text" class="input form-group" id="satuan" placeholder="meter / pcs" required>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div class="modal-footer">
-            <button class="btn btn-ghost" onclick="closeModal()">Batal</button>
-            <button class="btn btn-primary" onclick="storeData()">Simpan</button>
-        </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-ghost" onclick="closeModal()">Batal</button>
+                <button type="submit" class="btn btn-primary">Simpan</button>
+            </div>
+        </form>
     </div>
 </div>
 
-{{-- Modal Edit --}}
+<!-- ================= MODAL EDIT (DUMMY, TIDAK DIUBAH) ================= -->
 <div id="modalEditBarang" class="modal-overlay" style="display:none;">
     <div class="modal-box">
         <div class="modal-header">
-            <h3>Edit Supplier</h3>
+            <h3>Edit Barang</h3>
         </div>
         <div class="modal-body">
             <p>(dummy)</p>
@@ -112,26 +119,30 @@
 <script>
     const modal = document.getElementById('modalTambahBarang');
     const editModal = document.getElementById('modalEditBarang');
+    const btnTambah = document.getElementById('btnTambahBarang');
 
-    document.querySelector('.btn.btn-primary').addEventListener('click', () => {
+    btnTambah.addEventListener('click', () => {
         modal.style.display = 'flex';
     });
 
-    function closeModal() {
+    function closeModal(){
         modal.style.display = 'none';
     }
 
-    function storeData() {
-        let kode = document.getElementById('kode');
-        let nama_barang = document.getElementById('nama_barang');
-        let jenis = document.getElementById('jenis');
-        let satuan = document.getElementById('satuan')
+    function storeData(e){
+        e.preventDefault(); // ⛔ cegah reload
 
-        alert('Supplier disimpan (dummy).');
+        const kode = document.getElementById('kode');
+        const nama = document.getElementById('nama_barang');
+        const jenis = document.getElementById('jenis');
+        const satuan = document.getElementById('satuan');
+
+        alert('Barang disimpan (dummy).');
+
         modal.style.display = 'none';
 
         kode.value = "";
-        nama_barang.value = "";
+        nama.value = "";
         jenis.value = "";
         satuan.value = "";
     }
@@ -145,9 +156,8 @@
     }
 
     function deleteRow(button){
-        if(confirm("Hapus supplier?")){
-            let row = button.parentElement.parentElement;
-            row.remove();
+        if(confirm("Hapus barang?")){
+            button.closest('tr').remove();
         }
     }
 </script>
